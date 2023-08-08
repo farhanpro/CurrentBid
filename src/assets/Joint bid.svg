@@ -1,0 +1,14 @@
+<svg id="Joint_bid" data-name="Joint bid" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <rect id="Rectangle_3235" data-name="Rectangle 3235" width="36" height="36" rx="18" fill="#e4e2f4"/>
+  <rect id="Rectangle_3072" data-name="Rectangle 3072" width="28" height="28" transform="translate(4 4)" fill="none"/>
+  <g id="Group_3827" data-name="Group 3827" transform="translate(378.052 -15066.771)">
+    <path id="Intersection_18" data-name="Intersection 18" d="M1,7a1,1,0,0,1-.991-.868C.17,2.713,2.567,0,5.5,0s5.33,2.713,5.491,6.132A1,1,0,0,1,10,7Z" transform="translate(-366.052 15085.771)" fill="none"/>
+    <path id="Path_7537" data-name="Path 7537" d="M9.975,6.944A3.222,3.222,0,1,0,6.753,3.722h0A3.222,3.222,0,0,0,9.975,6.944Z" transform="translate(-370.612 15076.271)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_7538" data-name="Path 7538" d="M10.218,15.117h-5.8V14.41a5.789,5.789,0,0,1,5.844-5.744,5.517,5.517,0,0,1,1.8.32" transform="translate(-370.856 15077.123)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_7539" data-name="Path 7539" d="M5.879,7.184a3.119,3.119,0,1,1,0-6.239" transform="translate(-372.316 15076.319)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_7540" data-name="Path 7540" d="M3,15.079H.5V14.4A5.633,5.633,0,0,1,4.868,8.977" transform="translate(-372.552 15077.161)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Line_1087" data-name="Line 1087" x1="5.819" transform="translate(-353.871 15092.647)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="Path_7542" data-name="Path 7542" d="M15.674,8.623l2.782,2.782a.775.775,0,0,1,0,1.1h0l-1.228,1.221a.775.775,0,0,1-1.1,0h0l-2.775-2.783a.775.775,0,0,1,0-1.1h0l1.22-1.22a.775.775,0,0,1,1.1,0Z" transform="translate(-369.473 15075.707)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <line id="Line_1088" data-name="Line 1088" x1="3.492" y2="3.492" transform="translate(-358.23 15088.042)" fill="none" stroke="#4c41bb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>

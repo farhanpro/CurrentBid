@@ -1,0 +1,194 @@
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <p class="card-text bold-text">My Info</p>
+      </div>
+    </div>
+    <div class="border2">
+      <hr>
+    </div>
+
+    <div class="card-body" >
+      <div class="round-state">
+        <div>
+          <label class="label">Employee No.</label>
+          <p class="card-text bold-text">{{ myInfo.employeeNo }}</p>
+        </div>
+
+        <div>
+          <label class="label">Bid Group</label>
+          <p class="card-text bold-text">{{ myInfo.bidGroup }}</p>
+        </div>
+
+        <div>
+          <label class="label"
+            >Master Seniority Rank
+            <mat-icon
+              (click)="openModal(false)"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+              fontIcon="info"
+              style="color: #2969f2"
+            ></mat-icon
+          ></label>
+          <p>
+            <span class="card-text seniority-rank">
+              {{" " + myInfo.masterSenioratyRank + " "}}
+            </span>
+          </p>
+        </div>
+
+        <div>
+          <label class="label">Group Seniority Rank 
+            <mat-icon
+              (click)="openModal(true)"
+              data-bs-toggle="modal"
+              data-bs-target="#myModal"
+              fontIcon="info"
+              style="color: #2969f2"
+            ></mat-icon>
+          </label>
+          <p>
+            <span class="card-text seniority-rank">{{
+               myInfo.groupSenioratyRank 
+            }}</span>
+          </p>
+        </div>
+
+        <div>
+          <label class="label">Workgroup</label>
+          <p class="card-text bold-text">{{ myInfo.workGroup }}</p>
+        </div>
+
+        <div>
+          <label class="label">EA Type</label>
+          <p>
+            <span class="card-text bold-text">{{ myInfo.eaType }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div
+      class="card-header"
+      
+    >
+      <p class="card-text bold-text">Bidding Preference</p>
+    </div>
+    <div class="card-body" >
+      <label class="label">Random Award Mode</label>
+      <mat-form-field style="width: 300px">
+        <mat-select [(ngModel)]="selectedValue" name="food">
+          <mat-option *ngFor="let raw of raw" [value]="raw.value">
+            {{ raw.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button type="button" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <p class="card-text bold-text">Total Entitlement</p>
+
+      <table class="table">
+        <thead class="table-secondary">
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Days/Hrs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tet of tet">
+            <th scope="row">{{ tet.value }}</th>
+            <td class="bold-text">{{ tet.daysHrs }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Total</th>
+            <td class="bold-text">{{ total }}</td>
+          </tr>
+          <!--<tr>
+                        <th scope="row"> Stat Hrs.</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> Stat Day.</th>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bold-text">Total Hrs.</th>
+                        <td class="bold-text">188</td>
+                    </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <p class="card-text bold-text">Awards</p>
+      <table class="table">
+        <thead class="table-secondary">
+          <tr>
+            <th scope="col">Bid Rounds.</th>
+            <th scope="col">Available Hrs.</th>
+            <th scope="col">Awarded Hrs.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Round 1</th>
+            <td class="bold-text">188</td>
+            <td class="bold-text">120</td>
+          </tr>
+          <tr>
+            <th scope="row">Round 2</th>
+            <td class="bold-text">68</td>
+            <td class="bold-text">-</td>
+          </tr>
+          <tr>
+            <th scope="row">Random Award</th>
+            <td class="bold-text">-</td>
+            <td class="bold-text">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="modal row" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-header"> 
+            {{
+                groupSeniorityRank ? "Group Seniority Rank" : "Master Seniority Rank"
+              }}
+          </h5>
+        </div>
+        <div class="modal-body" style="margin: 10px; background-color: #f0f4fd">
+          <p>
+            <mat-icon fontIcon="info" style="color: #2969f2"></mat-icon>
+            {{  groupSeniorityRank ? "The GSR is the employee's seniority rank in their bid group. This is based on the MSR of employees in the specific bidgroup.":
+            "The MSR is the employee's seniority rank on their union or company Master Seniority List?"}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="coloseModel()"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

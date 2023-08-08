@@ -1,0 +1,91 @@
+.nav-home {
+    
+    text-align: center;
+    font: normal normal medium 16px/21px Red Hat Display;
+    letter-spacing: 0px;
+    color: #06103d;
+    opacity: 1;
+    border-style: outset;
+  }
+  .card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    font-family: "RedHatText";
+    font-size: 13pt;
+    color: black;
+  }
+  
+  .text-yellow {
+    color: var(--unnamed-color-f59b40);
+    text-align: left;
+    font: normal normal medium 14px/20px Red Hat Text;
+    letter-spacing: 0px;
+    color: #F59B40;
+    background-color: #FFE8B9;
+    opacity: 1;
+  }
+  .text-blue{
+    
+    text-align: left;
+    font: normal normal medium 14px/20px Red Hat Text;
+    letter-spacing: 0px;
+    color: #0F2658;
+    background-color: #D2D5D7;
+    opacity: 1;
+  }
+  .text-green {
+    color: #181C1E;
+    background-color: #2CBE7C;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .label{
+    color: #59666E;
+    margin-top: 10px;
+  }
+  .innerLabel{
+    color: #59666E;
+    
+  }
+  .round-state {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    text-align: left;
+  }
+  
+  .bid-rounds {
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+  }
+  
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  .card-header {
+    background-color: white;
+    border-color: black;
+  }
+  .card-header.hidden {
+    background-color: white;
+    border-color: black;
+    display: none;
+  }
+  .card-body.hidden {
+    display: none;
+  }
+
+.switchbtn{
+  background: #28315B 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
+}
+ 
+

@@ -1,0 +1,167 @@
+<div class="container">
+  <div  class="switchbtn">
+    <button style="width: 50%;color:aliceblue" class="btn  btn-block rounded-pill" (click)="showCurrentRound()" [ngClass]="{'btn-primary': currentRoundsVisible}">Current Round</button>
+    <button style="width: 50%;color:aliceblue" class="btn  btn-block rounded-pill" (click)="showCompletedRounds()" [ngClass]="{'btn-primary': completedRoundsVisible}">Completed Rounds</button>
+  </div>
+  <div>
+    <ng-container *ngIf="currentRoundsVisible">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-text bold-text">Add a New Bid</p>
+            <label class="label">Select a Block to Bid</label>
+            <mat-form-field>
+              <mat-label>Select</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" #dateRangeStart />
+                <input
+                  matEndDate
+                  placeholder="End date"
+                  #dateRangeEnd
+                  (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)"
+                />
+              </mat-date-range-input>
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker #picker>
+                <mat-datepicker-actions>
+                  <span
+                    style="
+                      position: absolute;
+                      top: 0%;
+                      left: 0%;
+                      border-color: black;
+                    "
+                    ><mat-icon mat-button matDatepickerCancel
+                      >close</mat-icon
+                    ></span
+                  >
+                  <button mat-raised-button color="primary" matDatepickerApply>
+                    Apply
+                  </button>
+                </mat-datepicker-actions>
+              </mat-date-range-picker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" (click)="expandRounds = !expandRounds">
+          <div>
+            <p class="card-text bold-text">Current Bids - Round 2</p>
+          </div>
+        </div>
+        <div class="card-header"  [class.hidden]="!expandRounds">
+          <div *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
+            <img src="../../assets/Joint bid.svg" />
+            <label class="label">{{ preference.preference }}</label>
+            <p style="margin-left:12% ;" class="card-text bold-text">{{ preference.date }}</p>
+            <div class="card-body" [class.hidden]="!preference.isShow" >
+                <label class="innerLabel">Joint Bid With</label>
+                <p class="card-text bold-text">{{preference.jointBidWith}}</p>
+            
+                <label class="innerLabel">Bid Gsr 
+                  <mat-icon
+                  (click)="openModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+                </label>
+                <p class="card-text bold-text">{{preference.bidGsr}}</p>
+                
+                <label class="innerLabel">Available block capacity</label>
+                <p class="card-text bold-text">{{preference.availbleBlockCapacity}}</p>
+
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="completedRoundsVisible">
+      <div class="card">
+
+        <div class="card-header">
+          <div>
+            <p class="card-text bold-text">Round 1</p>
+          </div>
+        </div>
+        
+        <div *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
+        <div class="card-header" (click)="preferenceRoundone = !preferenceRoundone">
+          <img src="../../assets/Joint bid.svg" />
+          <label class="card-text bold-text">{{preference.preference}}</label>
+
+          <img  src="../../assets/Awarded.svg" alt="" style="margin-left: 48%;">
+            <p  style ="margin-left: 11%;"class="card-text bold-text">{{preference.date}}</p>
+            <div class="card-body" [class.hidden]="!preference.isShow">
+              <label class="innerLabel">My Group Seniority Rank</label>
+              <p class="card-text bold-text">1</p>
+
+              <label  class="innerLabel">Awarded Hrs</label>
+              <p class="card-text bold-text">40</p>
+
+              <label class="innerLabel">Status</label>
+              <p>
+                <span class='text-green'
+                  >Awarded</span
+                >
+              </p>
+            </div>
+           
+          </div>
+      
+        </div>
+
+        
+        
+      </div>
+    </ng-container>
+  
+  </div>
+</div>
+
+<!-- ModalPopup -->
+<div class="modal row" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+        Bid GSR
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body" style="margin: 10px; background-color: #f0f4fd">
+        <p>
+          <mat-icon fontIcon="info" style="color: #2969f2"></mat-icon> Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta odit
+          quidem et commodi dignissimos perferendis veritatis, fugit possimus
+          iure harum tempore est iste non nisi accusantium numquam magni. Qui?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

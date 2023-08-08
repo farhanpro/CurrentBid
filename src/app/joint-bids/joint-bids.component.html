@@ -1,0 +1,407 @@
+
+  <div class="switchbtn">
+    <button
+      id="myButton"
+      style="width: 50%; color: aliceblue"
+      class="btn btn-block rounded-pill"
+      (click)="showCurrentRound()"
+      [ngClass]="{ 'btn-primary': currentRoundsVisible }"
+    >
+      My request
+    </button>
+
+    <button
+      id="myButton"
+      style="width: 50%; color: aliceblue"
+      class="btn btn-block rounded-pill"
+      (click)="showCompletedRounds()"
+      [ngClass]="{ 'btn-primary': completedRoundsVisible }"
+    >
+      Recived request
+    </button>
+  </div>
+
+  <div>
+    <ng-container *ngIf="currentRoundsVisible">
+      <div class="card">
+        <div class="card-header" (click)="expandRound1 = !expandRound1">
+          <div>
+            <p class="card-text bold-text">Round 1</p>
+          </div>
+        </div>
+        <div class="card-header" [class.hidden]="!expandRound1">
+          <div
+            *ngFor="let myRequest of myRequest"
+            (click)="myRequest.isShow = !myRequest.isShow"
+          >
+            <span>
+              <label class="card-text bold-text">Bid Blocks </label>
+              <img src="../../assets/Awarded.svg" style="margin-left: 52%" />
+              <p class="card-text bold-text">{{ myRequest.date }}</p>
+            </span>
+
+            <div class="card-body" [class.hidden]="!myRequest.isShow">
+              <label class="innerLabel">Round Number</label>
+              <p class="card-text bold-text">{{ myRequest.roundNumber }}</p>
+
+              <label class="innerLabel"
+                >Partner Master Seniority Rank
+                <mat-icon
+                  (click)="openModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerMasterSeniorityRank }}
+              </p>
+
+              <label class="innerLabel"
+                >Partner Group Seniority Rank
+                <mat-icon
+                  (click)="openModal(true)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerGroupSeniorityRank }}
+              </p>
+
+              <label class="innerLabel">Joint Bid With</label>
+              <p class="card-text bold-text">{{ myRequest.jointBidPartner }}</p>
+
+              <label class="innerLabel">Bid Gsr</label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerMasterSeniorityRank }}
+              </p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerGroupSeniorityRank }}
+              </p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">
+                {{ myRequest.jointAwardOption }}
+              </p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">{{ myRequest.requestStatus }}</p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">{{ myRequest.awardStatus }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" (click)="expandRound2 = !expandRound2">
+          <div>
+            <p class="card-text bold-text">Round 2</p>
+          </div>
+        </div>
+        <div class="card-header" [class.hidden]="!expandRound2">
+          <div
+            *ngFor="let myRequest of myRequestRound2"
+            (click)="myRequest.isShow = !myRequest.isShow"
+          >
+            <span>
+              <label class="label">Bid Blocks </label>
+
+              <p class="card-text bold-text">{{ myRequest.date }}</p>
+            </span>
+
+            <div class="card-body" [class.hidden]="!myRequest.isShow">
+              <label class="innerLabel">Round Number</label>
+              <p class="card-text bold-text">{{ myRequest.roundNumber }}</p>
+
+              <label class="innerLabel">Available Block Capacity for me </label>
+              <p class="card-text bold-text">
+                {{ myRequest.availableBlockCapacityForMe }}
+              </p>
+
+              <label class="innerLabel">Joint Bid With</label>
+              <p class="card-text bold-text">{{ myRequest.jointBidPartner }}</p>
+
+              <label class="innerLabel"
+                >Partner Master Seniority Rank
+                <mat-icon
+                  (click)="openModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerMasterSeniorityRank }}
+              </p>
+
+              <label class="innerLabel"
+                >Partner Group Seniority Rank
+                <mat-icon
+                  (click)="openModal(true)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon
+              ></label>
+              <p class="card-text bold-text">
+                {{ myRequest.partnerGroupSeniorityRank }}
+              </p>
+
+              <label class="innerLabel">Joint Award Option</label>
+              <p class="card-text bold-text">
+                {{ myRequest.jointAwardOption }}
+              </p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">
+                {{ myRequest.jointAwardOption }}
+              </p>
+
+              <label class="innerLabel">Available block capacity</label>
+              <p class="card-text bold-text">{{ myRequest.requestStatus }}</p>
+
+              <button type="button" class="btn btn-primary" (click)="openCancelModal(true)">
+                Cancle Joint Bid
+              </button>
+
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="completedRoundsVisible">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-text bold-text">Round 1</p>
+          </div>
+        </div>
+
+        <div
+          *ngFor="let preference of recivedRequest; let i = index"
+          (click)="preference.isShow = !preference.isShow"
+        >
+          <div
+            class="card-header"
+            (click)="preferenceRoundone = !preferenceRoundone"
+          >
+          <label class="card-text bold-text"> Round {{ i + 1 }} </label>
+          <img src="../../assets/Awarded.svg" style="margin-left: 52%" alt="" />
+            <p >
+              {{ preference.date }}
+            </p>
+            
+            <div class="card-body" [class.hidden]="!preference.isShow">
+              <label class="label">Round Number</label>
+              <p class="card-text bold-text">{{ preference.roundNumber }}</p>
+
+              <label class="label">Joint Bid Partner</label>
+              <p class="card-text bold-text">
+                {{ preference.jointBidPartner }}
+              </p>
+
+              <label class="label"
+                >Partnerv Master Seniority Rank
+                <mat-icon
+                  (click)="openModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ preference.partnerMasterSeniorityRank }}
+              </p>
+
+              <label class="label"
+                >Partnerv Group Seniority Rank
+                <mat-icon
+                  (click)="openModal(true)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ preference.partnerGroupSeniorityRank }}
+              </p>
+
+              <label class="label">Request Status </label>
+              <p class="card-text bold-text">{{ preference.requestStatus }}</p>
+
+              <label class="label">Award Status </label>
+              <p class="card-text bold-text">{{ preference.awardedStatus }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-text bold-text">Round 1</p>
+          </div>
+        </div>
+
+        <div
+          *ngFor="let preference of myRequestRound2; let i = index"
+          (click)="preference.isShow = !preference.isShow"
+        >
+          <div
+            class="card-header"
+            (click)="preferenceRoundone = !preferenceRoundone"
+          >
+          <label class="card-text bold-text"> Round {{ i + 1 }} </label>
+          <img src="../../assets/Awarded.svg" style="margin-left: 52%" />
+            <p  >
+              {{ preference.date }}
+            </p>
+            <div class="card-body" [class.hidden]="!preference.isShow">
+              <label class="label">Round Number</label>
+              <p class="card-text bold-text">{{ preference.roundNumber }}</p>
+
+              <label class="label">Joint Bid Partner</label>
+              <p class="card-text bold-text">
+                {{ preference.jointBidPartner }}
+              </p>
+
+              <label class="label"
+                >Partnerv Master Seniority Rank
+                <mat-icon
+                  (click)="openModal(false)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ preference.partnerMasterSeniorityRank }}
+              </p>
+
+              <label class="label"
+                >Partnerv Group Seniority Rank
+                <mat-icon
+                  (click)="openModal(true)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal"
+                  fontIcon="info"
+                  style="color: #2969f2"
+                ></mat-icon>
+              </label>
+              <p class="card-text bold-text">
+                {{ preference.partnerGroupSeniorityRank }}
+              </p>
+
+              <label class="label">Request Status </label>
+              <p class="card-text bold-text">{{ preference.requestStatus }}</p>
+
+              <!-- <label  class="label">Award Status  </label>
+             <p class="card-text bold-text">{{preference.awardedStatus}}</p>-->
+
+              <button type="button" class="btn btn-secondary">Decline</button>
+              <button type="button" class="btn btn-primary">Accept</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+
+<!-- cancelpopup -->
+<div class="modal row" id="cancelJointbids">
+  <div class="modal-dailog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm</h5>
+        <button
+        type="button"
+        class="btn-close"
+        (click)="closeCancelModal()"
+        data-bs-dismiss="modal"
+      ></button>
+      </div>
+      <div class="modal-body" style="margin: 10px; background-color: #f0f4fd">
+        <p>
+          <mat-icon fontIcon="info" style="color: #F55C38"></mat-icon> 
+          Are you sure you want to cancel the joint bid request?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-light"
+          (click)="closeCancelModal()"
+          data-bs-dismiss="modal"
+        >
+          NO
+        </button>
+        
+        <button 
+        type="button"
+        class="btn btn-primary"
+        >
+        Cancel Request
+        </button>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ModalPopup -->
+<div class="modal row" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{
+            partnerGroupSeniorityRank
+              ? "Partner Group Seniority Rank"
+              : "Partner Master Seniority Rank"
+          }}
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body" style="margin: 10px; background-color: #f0f4fd">
+        <p>
+          <mat-icon fontIcon="info" style="color: #2969f2"></mat-icon> Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta odit
+          quidem et commodi dignissimos perferendis veritatis, fugit possimus
+          iure harum tempore est iste non nisi accusantium numquam magni. Qui?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,7 +26,15 @@
   background-color: #FFE8B9;
   opacity: 1;
 }
-
+.text-blue{
+  
+  text-align: left;
+  font: normal normal medium 14px/20px Red Hat Text;
+  letter-spacing: 0px;
+  color: #0F2658;
+  background-color: #D2D5D7;
+  opacity: 1;
+}
 .text-green {
   color: #181C1E;
   background-color: #2CBE7C;
@@ -40,8 +48,11 @@
   color: #59666E;
   margin-top: 10px;
 }
+.innerLabel{
+  color: #59666E;
+  
+}
 .round-state {
-
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: auto;
@@ -62,17 +73,11 @@
   background-color: white;
   border-color: black;
 }
-
-.container {
-  background-color: #061020;
-  width: 100%;
-
-  /* For laptop screen */
-  @media (min-width: 1500px) {
-    width: 100%;
-  }
-}
-
 .card-body.hidden {
   display: none;
+}
+.switchbtn{
+  background: #28315B 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
 }

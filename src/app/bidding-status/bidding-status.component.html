@@ -1,0 +1,131 @@
+<div id="myHeader" class="card">
+  <div class="card-body">
+    <div>
+      <div>
+        <label class="label">Bid-name</label>
+        <p class="card-text bold-text">{{ biddingStatus.bidName }}</p>
+      </div>
+
+      <div>
+        <label class="label">Bid-Period</label>
+        <p class="card-text bold-text">{{ biddingStatus.bidPeriod }}</p>
+      </div>
+
+      <div>
+        <label class="label">State:</label>
+        <p>
+          <span class="text-yellow card-text bold-text">{{
+            biddingStatus.bidStatus
+          }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+
+<div class="card">
+  <div
+    id="top10AvailableBlocks"
+    class="card-header"
+    (click)="top10CurrentShow = !top10CurrentShow"
+  >
+    <div>
+      <p class="card-text bold-text">
+        Top 10 Available blocks
+
+        <mat-icon
+          (click)="openModal()"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          fontIcon="info"
+          style="color: #2969f2"
+        ></mat-icon>
+      </p>
+    </div>
+  </div>
+  <div class="card-body" [class.hidden]="!top10CurrentShow">
+    <div class="round-state">
+      <div *ngFor="let block of top10AvailableBlocks; let i = index">
+        <label>{{ block.blockno }}</label>
+
+        <p class="card-text bold-text">{{ block.date }}</p>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="card">
+  <div id="top10AvailableBlocks" class="card-header" (click) = "top10AvailShow = !top10AvailShow">
+    <div>
+      <p class="card-text bold-text">
+        Top 10 In-demand blocks
+
+        <mat-icon
+          (click)="openModal()"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+          fontIcon="info"
+          style="color: #2969f2"
+        ></mat-icon>
+      </p>
+    </div>
+  </div>
+  <div class="card-body" [class.hidden]="!top10AvailShow">
+    <div class="round-state">
+      <div *ngFor="let block of top10AvailableBlocks; let i = index">
+        <label>{{ block.blockno }}</label>
+
+        <p class="card-text bold-text">{{ block.date }}</p>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- modalpopup -->
+<div class="modal row" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{
+            top10IndemandBlock
+              ? "Top 10 In-Demand Blocks"
+              : "Top 10 Available Blocks"
+          }}
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body" style="margin: 10px; background-color: #f0f4fd">
+        <p>
+          <mat-icon fontIcon="info" style="color: #2969f2"></mat-icon> Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta odit
+          quidem et commodi dignissimos perferendis veritatis, fugit possimus
+          iure harum tempore est iste non nisi accusantium numquam magni. Qui?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="coloseModel()"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

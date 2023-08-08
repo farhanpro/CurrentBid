@@ -1,0 +1,60 @@
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  font-family: "RedHatText";
+  font-size: 13pt;
+  color: black;
+}
+
+hr{
+  border: 1px solid #D2D5D7;
+  opacity: 1;
+ 
+}
+
+.border2 {
+  padding: 0px 1em 0px 1em;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.round-state {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  text-align: left;
+}
+
+.label {
+  color: #59666e;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+.seniority-rank {
+  background: #c7eff6 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  font-size: 14px;
+  padding: 4px 4px 4px 4px;
+}
+
+.card-header {
+  background-color: white;
+  border-radius: 25px;
+  border: hidden;
+  padding: 16px 0px 0px 16px;
+  font: normal normal bold 20px/24px Red Hat Display;
+}
+
+.card-body.hidden {
+  display: none;
+}
+.card-text {
+  font-size: 20px;
+}

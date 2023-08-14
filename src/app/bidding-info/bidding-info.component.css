@@ -8,7 +8,7 @@
 
 
 .text-yellow {
-  color: var(--unnamed-color-f59b40);
+  
   text-align: left;
   padding: 0px 10px 0px 10px; 
   font: normal normal medium 14px/20px Red Hat Text;
@@ -19,6 +19,7 @@
 }
 .text-blue {
   text-align: left;
+  padding: 0px 10px 0px 10px; 
   font: normal normal medium 14px/20px Red Hat Text;
   letter-spacing: 0px;
   color: #0f2658;
@@ -26,14 +27,16 @@
   opacity: 1;
 }
 .text-green {
+  text-align: left;
+  padding: 0px 10px 0px 10px; 
+  font: normal normal medium 14px/20px Red Hat Text;
+  letter-spacing: 0px;
   color: #181c1e;
   background-color: #2cbe7c;
+  opacity: 1;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
+
 label {
 text-align: left;
 font: normal normal medium 14px/24px Red Hat Text;
@@ -41,12 +44,7 @@ letter-spacing: 0px;
 color: #59666E;
 opacity: 1;
 }
-.round-state {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: auto;
-  text-align: left;
-}
+
 
 .bid-rounds {
   font-size: 18pt;
@@ -85,4 +83,13 @@ hr{
 .card-body.hidden {
   display: none;
 }
-
+.round-state {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  text-align: left;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -3,27 +3,27 @@
 <div class="card">
   <div class="card-header">
     <div>
-      <h5 class="card-text bold-text">Current Bid Info</h5>
+      <h4 class="card-text bold-text">Current Bid Info</h4>
     </div>
     <hr class="border2" />
     <div >
       <div>
-        <label> Bid-name </label>
+        <label > Bid Name </label>
         <p class="bold-text">{{ currentBidInfo.bidName }}</p>
       </div>
 
       <div>
-        <label> Bid-Period </label>
+        <label> Bid Period </label>
         <p class="bold-text">{{ currentBidInfo.bidPeriod }}</p>
       </div>
 
       <div>
-        <label class="label"> Bid-State: </label>
+        <label class="label"> Bid-Status</label>
         <p>
           <span
             [ngClass]="{
-              'text-yellow': currentBidInfo.bidStatus == 'In-progress',
-              'text-green': currentBidInfo.bidStatus === 'Published'
+              'text-yellow bold-text': currentBidInfo.bidStatus == 'In-progress',
+              'text-green bold-text ': currentBidInfo.bidStatus === 'Published'
             }"
             >{{ currentBidInfo.bidStatus }}</span
           >
@@ -36,21 +36,21 @@
 <div class="card">
   <div class="card-header" (click)="expandRounds = !expandRounds">
     <div>
-      <p class="card-text bold-text">Current Round Status</p>
+      <h4 class="card-text bold-text">Current Round Status</h4>
     </div>
     <hr class="border2" />
     <div >
       <div>
-        <label class="label"> Round Name : </label>
+        <label class="label"> Round Name </label>
         <p class="bold-text">{{ currentRoundStatus.roundName }}</p>
       </div>
       <div>
-        <label class="label"> Round Status : </label>
+        <label class="label"> Round Status  </label>
         <p>
           <span
             [ngClass]="{
-              'text-yellow': currentRoundStatus.roundStatus == 'Bidding Open',
-              'text-red': currentRoundStatus.roundStatus === 'Bidding Closed'
+              'bold-text text-yellow': currentRoundStatus.roundStatus == 'Bidding Open',
+              'bold-text text-red': currentRoundStatus.roundStatus === 'Bidding Closed'
             }"
           >
             {{ currentRoundStatus.roundStatus }}
@@ -58,9 +58,9 @@
         </p>
       </div>
       <div>
-        <label class="label"> Remaning Bidding Time : </label>
+        <label class="label"> Remaning Bidding Time  </label>
         <p>
-          <span class=" text-green"
+          <span class="bold-text text-green"
             >{{ currentRoundStatus.remaningBiddingTime }}
           </span>
         </p>
@@ -73,7 +73,7 @@
 <div class="card">
   <div class="card-header" (click)="expandRounds = !expandRounds">
     <div>
-      <p class="card-text bold-text">Bid Rounds</p>
+      <h4 class="card-text bold-text">Bid Rounds</h4>
     </div>
 
     <hr class="border2" >
@@ -81,7 +81,7 @@
     <div >
       <div>
         <label class="label">Round Name</label>
-        <p class="bold-text">Round 2</p>
+        <p class="bold-text">Round 1</p>
       </div>
 
       <div>
@@ -91,7 +91,7 @@
 
       <div>
         <label class="label">Round Status</label>
-        <p><span class=" text-green">Published</span></p>
+        <p><span class="bold-text text-green">Published</span></p>
       </div>
       <hr class="card-text border2" >
     </div>
@@ -117,20 +117,20 @@
    
       <div class="round-state" style="padding-right: 15px">
         <!-- <label class="label">Bidding Open</label> -->
-        <p><span class="bold-text">Oct/20/2024 09:00</span></p>
+        <p><span class="bold-text">Oct-20-2024 09:00</span></p>
 
         <!-- <label class="label">Bidding Close</label> -->
-        <p><span class="bold-text">Oct/26/2024 23:59</span></p>
+        <p><span class="bold-text">Oct-26-2024 23:59</span></p>
       </div>
      
       <div>
-        <label class="label">Publish By :</label>
-        <p><span class="bold-text">Oct/07/2024</span></p>
+        <label class="label">Publish By </label>
+        <p><span class="bold-text">Oct-07-2024</span></p>
       </div>
 
       <div>
         <label class="label">Round Status</label>
-        <p><span class="text-yellow ">Bidding Open</span></p>
+        <p><span class="text-yellow bold-text">Bidding Open</span></p>
       </div>
    
  
@@ -142,7 +142,7 @@
   </div>
   <div>
     <label class="label">Publish By</label>
-    <p><span class="bold-text">Oct/27/2024</span></p>
+    <p><span class="bold-text">Oct-27-2024</span></p>
   </div>
   <div>
     <label class="label">Round Status</label>

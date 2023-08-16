@@ -25,7 +25,7 @@ export class BiddingInfoComponent {
 
   currentBidInfo:any = 
   {
-    bidPeriod :'Jan/08/2024 - Jan/05/2025',
+    bidPeriod :'Jan-08-2024 to Jan-05-2025',
     bidName : 'Vacation bid 101',
     bidStatus:'In-progress'
   }

@@ -30,19 +30,21 @@
     class="card-header"
     (click)="top10CurrentShow = !top10CurrentShow"
   >
-    <div>
+    <div >
       <p class="card-text bold-text">
         Top 10 Available blocks
 
-       <span style="padding-bottom: 20px;">
+       
         <mat-icon
           (click)="openModal()"
           data-bs-toggle="modal"
           data-bs-target="#myModal"
           fontIcon="info"
-          style="color: #2969f2"
+          style="color: #2969f2;"
         ></mat-icon>
-      </span>
+        <span style="padding-left : 80%;">
+          <mat-icon style = "font-size: xx-large;">{{ top10CurrentShow ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+        </span>
       </p>
     </div>
   </div>
@@ -71,8 +73,11 @@
           data-bs-toggle="modal"
           data-bs-target="#myModal"
           fontIcon="info"
-          style="color: #2969f2"
+          style="color: #2969f2 ;"
         ></mat-icon>
+        <span style="padding-left : 79%;">
+          <mat-icon style = "font-size: xx-large;">{{ top10AvailShow ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+        </span>
       </p>
     </div>
   </div>

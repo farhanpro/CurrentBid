@@ -5,12 +5,9 @@
   border-radius: 20px;
 }
 
-
-
 .text-yellow {
-  
   text-align: left;
-  padding: 0px 10px 0px 10px; 
+  padding: 0px 10px 0px 10px;
   font: normal normal medium 14px/20px Red Hat Text;
   letter-spacing: 0px;
   color: #f59b40;
@@ -19,7 +16,7 @@
 }
 .text-blue {
   text-align: left;
-  padding: 0px 10px 0px 10px; 
+  padding: 0px 10px 0px 10px;
   font: normal normal medium 14px/20px Red Hat Text;
   letter-spacing: 0px;
   color: #0f2658;
@@ -28,23 +25,21 @@
 }
 .text-green {
   text-align: left;
-  padding: 0px 10px 0px 10px; 
+  padding: 0px 10px 0px 10px;
   font: normal normal medium 14px/20px Red Hat Text;
   letter-spacing: 0px;
-  color: #10452D;
+  color: #10452d;
   background-color: #2cbe7c;
   opacity: 1;
 }
 
-
 label {
-text-align: left;
-font: normal normal medium 14px/24px Red Hat Text;
-letter-spacing: 0px;
-color: #59666E;
-opacity: 1;
+  text-align: left;
+  font: normal normal medium 14px/24px Red Hat Text;
+  letter-spacing: 0px;
+  color: #59666e;
+  opacity: 1;
 }
-
 
 .bid-rounds {
   font-size: 18pt;
@@ -59,26 +54,24 @@ opacity: 1;
 .card-header {
   background-color: white;
   border-radius: 25px;
-  border : hidden;
+  border: hidden;
   padding: 16px 0px 0px 16px;
-  
 }
 .card-text {
   font-size: 20px;
 }
 
-hr{
-  border: 1px solid #D2D5D7;
+hr {
+  border: 1px solid #d2d5d7;
   opacity: 1;
- 
 }
 
-.border2{
+.border2 {
   /* padding : 0px 1em 0px 1em; */
-  margin : 10px 20px 10px 6px;  
+  margin: 10px 20px 10px 6px;
 }
-.card-body{
- margin-bottom: 30px;
+.card-body {
+  margin-bottom: 30px;
 }
 .card-body.hidden {
   display: none;
@@ -88,7 +81,6 @@ hr{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
- 
+
   text-align: left;
 }
-

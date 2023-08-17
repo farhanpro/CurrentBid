@@ -1,27 +1,26 @@
 <div id="myHeader" class="card">
   <div class="card-body">
+
     <div>
-      <div>
-        <label class="label">Bid-name</label>
-        <p class="card-text bold-text">{{ biddingStatus.bidName }}</p>
-      </div>
-
-      <div>
-        <label class="label">Bid-Period</label>
-        <p class="card-text bold-text">{{ biddingStatus.bidPeriod }}</p>
-      </div>
-
-      <div>
-        <label class="label">State:</label>
-        <p>
-          <span class="text-yellow card-text bold-text">{{
-            biddingStatus.bidStatus
-          }}</span>
-        </p>
-      </div>
+      <label class="label">Bid-name</label>
+      <p class="card-text bold-text">{{ biddingStatus.bidName }}</p>
     </div>
+
+    <div>
+      <label class="label">Bid-Period</label>
+      <p class="bold-text">{{ biddingStatus.bidPeriod }}</p>
+    </div>
+    
+    <div>
+      <label class="label">Bid Status </label>
+      <p>
+        <span class="text-yellow card-text bold-text">{{
+          biddingStatus.bidStatus
+        }}</span>
+      </p>
+    </div>
+
   </div>
-  <br />
 </div>
 
 <div class="card">
@@ -30,20 +29,21 @@
     class="card-header"
     (click)="top10CurrentShow = !top10CurrentShow"
   >
-    <div >
+    <div>
       <p class="card-text bold-text">
         Top 10 Available blocks
 
-       
         <mat-icon
           (click)="openModal()"
           data-bs-toggle="modal"
           data-bs-target="#myModal"
           fontIcon="info"
-          style="color: #2969f2;"
+          style="color: #2969f2"
         ></mat-icon>
-        <span style="padding-left : 80%;">
-          <mat-icon style = "font-size: xx-large;">{{ top10CurrentShow ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+        <span style="padding-left: 25%">
+          <mat-icon style="font-size: xx-large">{{
+            top10CurrentShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
+          }}</mat-icon>
         </span>
       </p>
     </div>
@@ -51,19 +51,23 @@
   <div class="card-body" [class.hidden]="!top10CurrentShow">
     <div class="round-state">
       <div *ngFor="let block of top10AvailableBlocks; let i = index">
-        <label>{{ block.blockno }}</label>
+        <label class="card-text">{{ block.blockno }}</label>
 
-        <p class="card-text bold-text">{{ block.date }}</p>
+        <p class="bold-text">{{ block.date }}</p>
         <hr />
       </div>
     </div>
   </div>
 </div>
 
-<br>
+<br />
 
 <div class="card">
-  <div id="top10AvailableBlocks" class="card-header" (click) = "top10AvailShow = !top10AvailShow">
+  <div
+    id="top10CurrentBlocks"
+    class="card-header"
+    (click)="top10AvailShow = !top10AvailShow"
+  >
     <div>
       <p class="card-text bold-text">
         Top 10 In-demand blocks
@@ -73,10 +77,12 @@
           data-bs-toggle="modal"
           data-bs-target="#myModal"
           fontIcon="info"
-          style="color: #2969f2 ;"
+          style="color: #2969f2"
         ></mat-icon>
-        <span style="padding-left : 79%;">
-          <mat-icon style = "font-size: xx-large;">{{ top10AvailShow ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+        <span style="padding-left: 20%">
+          <mat-icon style="font-size: xx-large">{{
+            top10AvailShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
+          }}</mat-icon>
         </span>
       </p>
     </div>
@@ -84,16 +90,14 @@
   <div class="card-body" [class.hidden]="!top10AvailShow">
     <div class="round-state">
       <div *ngFor="let block of top10AvailableBlocks; let i = index">
-        <label>{{ block.blockno }}</label>
+        <label class="card-text">{{ block.blockno }}</label>
 
-        <p class="card-text bold-text">{{ block.date }}</p>
+        <p class=" bold-text">{{ block.date }}</p>
         <hr />
       </div>
     </div>
   </div>
 </div>
-
-
 
 <!-- modalpopup -->
 <div class="modal row" id="myModal">

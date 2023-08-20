@@ -80,14 +80,12 @@
     </div>
     <div class="card-body" >
       <label class="label">Random Award Mode</label>
-      <mat-form-field style="width: 300px">
-        <mat-select [(ngModel)]="selectedValue" name="food">
-          <mat-option *ngFor="let raw of raw" [value]="raw.value">
-            {{ raw.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
+      
+      <select class="form-select">
+        
+        <option *ngFor="let raw of raw; let i = index" value="{{i}}">{{raw.viewValue | titlecase}}</option>
+      </select>
+      <br>
       <button type="button" class="btn btn-primary">Save</button>
     </div>
   </div>

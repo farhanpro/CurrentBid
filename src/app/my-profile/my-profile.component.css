@@ -8,6 +8,23 @@
   color: black;
 }
 
+/* Change the border color of the mat-form-field */
+::ng-deep  .mat-form-field {
+  border-color: blue !important;
+  border-radius: 20%;
+  background-color: black;
+}
+
+/* Change the background color of the mat-select dropdown */
+.mat-select-panel {
+  background-color: white !important;
+}
+
+/* Change the text color of the options inside the dropdown */
+.mat-option {
+  color: black; /* Change this to your desired text color */
+}
+
 hr{
   border: 1px solid #D2D5D7;
   opacity: 1;

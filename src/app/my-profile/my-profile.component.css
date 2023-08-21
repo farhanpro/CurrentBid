@@ -3,36 +3,17 @@
   margin-bottom: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 20px;
-  font-family: "RedHatText";
-  font-size: 13pt;
-  color: black;
+  
 }
 
-/* Change the border color of the mat-form-field */
-::ng-deep  .mat-form-field {
-  border-color: blue !important;
-  border-radius: 20%;
-  background-color: black;
-}
-
-/* Change the background color of the mat-select dropdown */
-.mat-select-panel {
-  background-color: white !important;
-}
-
-/* Change the text color of the options inside the dropdown */
-.mat-option {
-  color: black; /* Change this to your desired text color */
-}
-
-hr{
-  border: 1px solid #D2D5D7;
+hr {
+  border: 1px solid #d2d5d7;
   opacity: 1;
- 
 }
 
 .border2 {
-  padding: 0px 1em 0px 1em;
+  /* padding : 0px 1em 0px 1em; */
+  margin: 10px 20px 10px 6px;
 }
 
 .bold-text {
@@ -48,6 +29,8 @@ hr{
 
 .label {
   color: #59666e;
+  font-family: "Red Hat Text";
+  font-size: 13pt;
 }
 .bold-text {
   font-weight: bold;
@@ -58,7 +41,9 @@ hr{
   border-radius: 4px;
   opacity: 1;
   font-size: 14px;
-  padding: 4px 4px 4px 4px;
+  color: #124851;
+  font-weight: bold;
+  padding: 2px 8px 2px 8px;
 }
 
 .card-header {
@@ -66,12 +51,14 @@ hr{
   border-radius: 25px;
   border: hidden;
   padding: 16px 0px 0px 16px;
-  font: normal normal bold 20px/24px Red Hat Display;
+  font-family:  "Red Hat Display";
 }
 
 .card-body.hidden {
   display: none;
 }
 .card-text {
-  font-size: 20px;
+  font-size: medium;
+  font-family: "Red Hat Text";
+  color: black;
 }

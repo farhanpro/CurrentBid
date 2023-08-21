@@ -8,21 +8,16 @@
   color: black;
   border-left-color: #f59b40;
 }
-
 #top10AvailableBlocks {
   border-left: 12px solid rgb(0, 0, 0);
   font-family: "RedHatText";
   font-size: 13pt;
- 
-  border-left-color: #2CBE7C;
+  border-left-color: #2cbe7c;
 }
 #top10CurrentBlocks {
- 
   border-left: 12px solid rgb(0, 0, 0);
-  
   font-family: "RedHatText";
   font-size: 13pt;
- 
   border-left-color: #f59b40;
 }
 .card2 {
@@ -39,11 +34,14 @@
   font-weight: bold;
 }
 
-.card-text{
-  font-size: 20px;
+.card-text {
+  text-align: left;
+  font-size: medium;
+  font-family:  "Red Hat Text";
+  letter-spacing: 0px;
+  color: #181c1e;
+  opacity: 1;
 }
-
-
 
 .card-header {
   background-color: white;
@@ -52,9 +50,9 @@
 
 .text-yellow {
   text-align: left;
-  padding: 0px 10px 0px 10px; 
+  padding: 0px 10px 0px 10px;
   /* top,right,bottom,left */
-  font: normal normal medium 14px/20px Red Hat Text;
+  font: "RedHatText";
   letter-spacing: 0px;
   color: #f59b40;
   background-color: #ffe8b9;
@@ -75,12 +73,30 @@
 }
 
 .label {
-text-align: left;
-font: normal normal medium 14px/24px Red Hat Text;
-letter-spacing: 0px;
-color: #59666E;
-opacity: 1;
+  text-align: left;
+  font-size: medium;
+  font-family: "Red Hat Text";
+  letter-spacing: 0px;
+  color: #59666e;
+  opacity: 1;
 }
 .card-body.hidden {
   display: none;
+}
+
+.Top_10_Available_blocks {
+  padding-left: 20%;
+}
+.Top_10_In-demand_blocks {
+  padding-left: 15%;
+}
+@media (min-width: 768px) {
+  /* This media query targets screens with a width of 768px or more, typically tablets and laptops */
+  .Top_10_Available_blocks {
+    padding-left: 70%;
+  }
+
+  .Top_10_In-demand_blocks {
+    padding-left: 69%;
+  }
 }

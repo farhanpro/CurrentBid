@@ -35,12 +35,20 @@
 
 label {
   text-align: left;
-  font: normal normal medium 14px/24px Red Hat Text;
+  font-family:  "Red Hat Text";
+  font-size: medium;
   letter-spacing: 0px;
   color: #59666e;
   opacity: 1;
 }
-
+.card-body-text{
+  text-align: left;
+  font-family: "Red Hat Text";
+  font-size: medium;
+  letter-spacing: 0px;
+  color: #181C1E;
+  opacity: 1;
+}
 .bid-rounds {
   font-size: 18pt;
   color: white;

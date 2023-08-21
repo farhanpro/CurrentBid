@@ -3,18 +3,18 @@
 <div class="card">
   <div class="card-header">
     <div>
-      <h4 class="card-text bold-text">Current Bid Info</h4>
+      <h4 class="card-text bold-text ">Current Bid Info</h4>
     </div>
     <hr class="border2" />
     <div >
       <div>
         <label > Bid Name </label>
-        <p class="bold-text">{{ currentBidInfo.bidName }}</p>
+        <p class="card-body-text bold-text">{{ currentBidInfo.bidName }}</p>
       </div>
 
       <div>
         <label> Bid Period </label>
-        <p class="bold-text">{{ currentBidInfo.bidPeriod }}</p>
+        <p class="card-body-text bold-text">{{ currentBidInfo.bidPeriod }}</p>
       </div>
 
       <div>
@@ -22,7 +22,7 @@
         <p>
           <span
             [ngClass]="{
-              'text-yellow bold-text': currentBidInfo.bidStatus == 'In-progress',
+              'text-yellow  bold-text': currentBidInfo.bidStatus == 'In-progress',
               'text-green bold-text ': currentBidInfo.bidStatus === 'Published'
             }"
             >{{ currentBidInfo.bidStatus }}</span
@@ -42,7 +42,7 @@
     <div >
       <div>
         <label class="label"> Round Name </label>
-        <p class="bold-text">{{ currentRoundStatus.roundName }}</p>
+        <p class="card-body-text bold-text">{{ currentRoundStatus.roundName }}</p>
       </div>
       <div>
         <label class="label"> Round Status  </label>
@@ -81,12 +81,12 @@
     <div >
       <div>
         <label class="label">Round Name</label>
-        <p class="bold-text">Round 1</p>
+        <p class="card-body-text bold-text">Round 1</p>
       </div>
 
       <div>
         <label class="label">Awarded Blocks</label>
-        <p class="bold-text">2</p>
+        <p class="card-body-text bold-text">2</p>
       </div>
 
       <div>
@@ -100,7 +100,7 @@
     
       <div>
         <label class="label">Round Name</label>
-        <p><span class="bold-text">Round 2</span></p>
+        <p><span class="card-body-text bold-text">Round 2</span></p>
       </div>
 
       
@@ -117,15 +117,15 @@
    
       <div class="round-state" style="padding-right: 15px">
         <!-- <label class="label">Bidding Open</label> -->
-        <p><span class="bold-text">Oct-20-2024 09:00</span></p>
+        <p><span class="card-body-text bold-text">Oct-20-2024 09:00</span></p>
 
         <!-- <label class="label">Bidding Close</label> -->
-        <p><span class="bold-text">Oct-26-2024 23:59</span></p>
+        <p><span class="card-body-text bold-text">Oct-26-2024 23:59</span></p>
       </div>
      
       <div>
         <label class="label">Publish By </label>
-        <p><span class="bold-text">Oct-07-2024</span></p>
+        <p><span class="card-body-text bold-text">Oct-07-2024</span></p>
       </div>
 
       <div>
@@ -138,11 +138,11 @@
   <div>
     <hr class="border2">
     <label class="label">Round Name</label>
-    <p><span class="bold-text">Random</span></p>
+    <p><span class="card-body-text bold-text">Random</span></p>
   </div>
   <div>
     <label class="label">Publish By</label>
-    <p><span class="bold-text">Oct-27-2024</span></p>
+    <p><span class="card-body-text bold-text">Oct-27-2024</span></p>
   </div>
   <div>
     <label class="label">Round Status</label>

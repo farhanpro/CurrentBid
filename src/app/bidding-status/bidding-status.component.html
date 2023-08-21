@@ -2,13 +2,13 @@
   <div class="card-body">
 
     <div>
-      <label class="label">Bid-name</label>
+      <label class="label">Bid Name</label>
       <p class="card-text bold-text">{{ biddingStatus.bidName }}</p>
     </div>
 
     <div>
       <label class="label">Bid-Period</label>
-      <p class="bold-text">{{ biddingStatus.bidPeriod }}</p>
+      <p class="card-text bold-text">{{ biddingStatus.bidPeriod }}</p>
     </div>
     
     <div>
@@ -40,7 +40,7 @@
           fontIcon="info"
           style="color: #2969f2"
         ></mat-icon>
-        <span style="padding-left: 20%">
+        <span class="Top_10_Available_blocks">
           <mat-icon style="font-size: xx-large">{{
             top10CurrentShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
           }}</mat-icon>
@@ -51,9 +51,9 @@
   <div class="card-body" [class.hidden]="!top10CurrentShow">
     <div class="round-state">
       <div *ngFor="let block of top10AvailableBlocks; let i = index">
-        <label class="card-text">{{ block.blockno }}</label>
+        <label class=" bold-text">{{ block.blockno }}</label>
 
-        <p class="bold-text">{{ block.date }}</p>
+        <p class="bold-text card-text">{{ block.date }}</p>
         <hr />
       </div>
     </div>
@@ -79,7 +79,7 @@
           fontIcon="info"
           style="color: #2969f2"
         ></mat-icon>
-        <span style="padding-left: 15%">
+        <span class="Top_10_In-demand_blocks">
           <mat-icon style="font-size: xx-large">{{
             top10AvailShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
           }}</mat-icon>
@@ -90,9 +90,9 @@
   <div class="card-body" [class.hidden]="!top10AvailShow">
     <div class="round-state">
       <div *ngFor="let block of top10AvailableBlocks; let i = index">
-        <label class="card-text">{{ block.blockno }}</label>
+        <label class="bold-text">{{ block.blockno }}</label>
 
-        <p class=" bold-text">{{ block.date }}</p>
+        <p class=" bold-text card-text">{{ block.date }}</p>
         <hr />
       </div>
     </div>

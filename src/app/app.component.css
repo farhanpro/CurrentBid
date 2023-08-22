@@ -11,9 +11,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
-  font-family: "RedHatText";
-  font-size: 13pt;
+  border-radius: 12px;
   color: black;
 }
 
@@ -40,6 +38,16 @@
   color: #59666E;
   margin-top: 10px;
 }
+
+.custom-nav .navbar-text {
+  cursor: pointer;
+  transition: border-bottom-color 0.3s, color 0.3s;
+}
+
+.custom-nav .navbar-text.clicked {
+  color: blue;
+  border-bottom: 2px solid blue;
+}
 .round-state {
 
   flex-wrap: wrap;
@@ -63,6 +71,8 @@
   border-color: black;
 }
 
+
+
 .container {
   background-color: #061020;
   width: 100%;
@@ -72,7 +82,11 @@
     width: 100%;
   }
 }
-
+.custom-nav
+{
+  flex: 1;
+  justify-content: space-between;
+}
 .card-body.hidden {
   display: none;
 }

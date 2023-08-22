@@ -21,6 +21,8 @@ import { CommonModule } from '@angular/common';
 import { JointBidsComponent } from './joint-bids/joint-bids.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { HeadersComponent } from './headers/headers.component';
+
 
 const routes: Routes = [
   { path: '', component: BiddingInfoComponent },
@@ -41,6 +43,8 @@ const routes: Routes = [
     CurrentroundComponent,
     CompletedroundsComponent,
     JointBidsComponent,
+    HeadersComponent,
+    
   ],
   imports: [
     BrowserModule,

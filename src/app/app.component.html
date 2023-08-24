@@ -1,16 +1,16 @@
 <div class="container-fluid">
-  <nav class="navbar bg-white row nav-home align-items-center"><span>HOME</span></nav>
+  
+  <nav class="bg-white bold-text row nav-home align-items-center pageTitle"><span>Home</span></nav>
+  <nav class="bg-white row nav-home custom-nav">
+    <span class="navbar-text bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/')}"  routerLink="/"> {{"Bid Info"}} </span>
 
-  <nav class="navbar  bg-white row nav-home custom-nav">
-    <span class="navbar-text  col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/')}"  routerLink="/"> {{"Bid Info" | uppercase}} </span>
-
-    <span class="navbar-text bold-text col"  [routerLinkActive]="['active']" [ngClass]="{'clicked ': isActive('/bidding-status')}" routerLink="bidding-status"> {{"Bidding Status" | uppercase}} </span>
+    <span class="navbar-text bold-text col"  [routerLinkActive]="['active']" [ngClass]="{'clicked ': isActive('/bidding-status')}" routerLink="bidding-status"> {{"Bidding Status"}} </span>
    
-    <span class="navbar-text  bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked ': isActive('/my-profile')}"  routerLink="my-profile"> {{"MY Profile" | uppercase}} </span>
+    <span class="navbar-text  bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked ': isActive('/my-profile')}"  routerLink="my-profile"> {{"MY Profile"}} </span>
 
-    <span class="navbar-text bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/my-bids')}" routerLink="my-bids"> {{"My Bids" | uppercase}} </span>
+    <span class="navbar-text bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/my-bids')}" routerLink="my-bids"> {{"My Bids"}} </span>
     
-    <span class="navbar-text  bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/app-joint-bids')}" routerLink="app-joint-bids">{{"Joint Bids" | uppercase}}</span>
+    <span class="navbar-text  bold-text col" [routerLinkActive]="['active']" [ngClass]="{'clicked': isActive('/app-joint-bids')}" routerLink="app-joint-bids">{{"Joint Bids"}}</span>
   </nav>
  
  <!-- <app-mybids></app-mybids> -->

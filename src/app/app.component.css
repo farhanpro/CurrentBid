@@ -5,7 +5,6 @@
   letter-spacing: 0px;
   color: #06103d;
   opacity: 1;
-  border-style: outset;
 }
 .card {
   margin-top: 10px;
@@ -45,8 +44,8 @@
 }
 
 .custom-nav .navbar-text.clicked {
-  color: blue;
-  border-bottom: 2px solid blue;
+  color: #2969F2;
+  border-bottom: 2px solid #2969F2;
 }
 .round-state {
 
@@ -89,4 +88,17 @@
 }
 .card-body.hidden {
   display: none;
+}
+
+.pageTitle {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0px;
+}
+.bidMenu {
+  padding: 5px 0px;
+}
+.bidMenu span {
+  font-size: 16px;
+  color: #181c1e;
+  font-weight: 600;
 }

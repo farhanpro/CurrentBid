@@ -1,15 +1,23 @@
 .card {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 12px,12px,12px,12px;
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
+  border-radius: 12px;
+  background: padding-box;
+}
+
+.borders{
+  border-bottom: 1rem;
+  border-bottom-color:  black;
 }
 
 .text-yellow {
   text-align: left;
   padding: 0px 10px 0px 10px;
-  font: normal normal medium 14px/20px Red Hat Text;
+  font-size: 14px;
   letter-spacing: 0px;
+  font-family: "Red Hat Text";
   color: #f59b40;
   background-color: #ffe8b9;
   opacity: 1;
@@ -18,6 +26,7 @@
   text-align: left;
   padding: 0px 10px 0px 10px;
   font: normal normal medium 14px/20px Red Hat Text;
+  font-family: "Red Hat Text";
   letter-spacing: 0px;
   color: #0f2658;
   background-color: #d2d5d7;
@@ -36,15 +45,17 @@
 label {
   text-align: left;
   font-family:  "Red Hat Text";
-  font-size: medium;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0px;
-  color: #59666e;
+  color: #59666E;
   opacity: 1;
 }
 .card-body-text{
   text-align: left;
   font-family: "Red Hat Text";
-  font-size: medium;
+  font-weight: 600;
+  font-size: 16px;
   letter-spacing: 0px;
   color: #181C1E;
   opacity: 1;
@@ -61,12 +72,16 @@ label {
 
 .card-header {
   background-color: white;
-  border-radius: 25px;
+  border-radius: 12px;
   border: hidden;
   padding: 16px 0px 0px 16px;
 }
 .card-text {
   font-size: 20px;
+  color:#181C1E;
+  opacity: 1;
+  letter-spacing: 0px;
+  
 }
 
 hr {

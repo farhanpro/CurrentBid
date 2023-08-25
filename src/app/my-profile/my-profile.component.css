@@ -1,11 +1,17 @@
 .card {
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
+  border: 1px solid #FFFFFF;
+  border-radius: 12px;
+  padding: 16px;
   
 }
-
+h4{
+  font-family: "Red Hat Text";
+  font-size: 20px;
+  font-weight: 400 ;
+  
+}
 hr {
   border: 1px solid #d2d5d7;
   opacity: 1;
@@ -20,17 +26,19 @@ hr {
   font-weight: bold;
 }
 
-.round-state {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: auto;
-  text-align: left;
-}
 
+label{
+  color: #59666e;
+  font-weight: 500;
+  font-family: "Red Hat Text";
+  font-size: 14px;
+}
 .label {
   color: #59666e;
+  font-weight: 500;
   font-family: "Red Hat Text";
-  font-size: 13pt;
+  font-size: 14px;
+  padding-top: 14px;
 }
 .bold-text {
   font-weight: bold;
@@ -43,14 +51,12 @@ hr {
   font-size: 14px;
   color: #124851;
   font-weight: bold;
-  padding: 2px 8px 2px 8px;
+  padding: 2px 8px 0px 8px;
 }
 
 .card-header {
   background-color: white;
-  border-radius: 25px;
   border: hidden;
-  padding: 16px 0px 0px 16px;
   font-family:  "Red Hat Display";
 }
 
@@ -58,7 +64,11 @@ hr {
   display: none;
 }
 .card-text {
-  font-size: medium;
+  font-size: 16px;
   font-family: "Red Hat Text";
-  color: black;
+  color: #181C1E;
+  font-weight: 500;
+  opacity: 1;
+  text-align: left;
+  letter-spacing: 0px;
 }

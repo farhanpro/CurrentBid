@@ -7,14 +7,30 @@
   opacity: 1;
   border-style: outset;
 }
+.background-image {
+  background-image: url('../../assets/NotAwardediconbig.svg');
+  background-size: cover; /* Adjust the sizing of the background image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  width: 30%; /* Set width to fill the element */
+  height: 300px; /* Set height to control the height of the element */
+}
 .card {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
-  font-family: "RedHatText";
+  border-radius: 12px;
+  font-family: "Red Hat Text";
   font-size: 13pt;
-  color: black;
+  opacity: 1;
+  background : padding-box;
+  background-color: #FFFFFF;
+  padding : 16px;
+}
+
+
+.card-body{
+ background-color: #FFFFFF;
+ width: 100%;
 }
 
 .text-yellow {
@@ -46,7 +62,7 @@
 }
 .label{
   color: #59666E;
-  margin-top: 10px;
+  
 }
 .innerLabel{
   color: #59666E;
@@ -71,13 +87,33 @@
 
 .card-header {
   background-color: white;
-  border-color: black;
+ 
+  border-radius: 12px;
+}
+.currentBid_card-header
+{
+  background-color: #EBECED;
+  border-radius: 12px 12px 0px 0px;
+  opacity: 1;
 }
 .card-body.hidden {
   display: none;
 }
 .switchbtn{
+  margin-top: 18px;
+  margin-bottom: 16px;
   background: #28315B 0% 0% no-repeat padding-box;
   border-radius: 16px;
   opacity: 1;
+}
+.swtichbtntoggle{
+  width: 50%;
+  color:aliceblue
+}
+h4{
+  font-family: "Red Hat Text";
+  opacity: 1;
+  font-size: 20px;
+  font-weight: 400px;
+  color:#181C1E
 }

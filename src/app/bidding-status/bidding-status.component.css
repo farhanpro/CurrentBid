@@ -10,7 +10,6 @@
   padding:12px
 }
 
-
 #top10AvailableBlocks {
   border-left: 12px solid rgb(0, 0, 0);
   font-family: "RedHatText";
@@ -23,6 +22,7 @@
   font-size: 13pt;
   border-left-color: #f59b40;
 }
+
 .bold-text {
   font-weight: bold;
 }
@@ -39,6 +39,7 @@
 .card-header {
   background-color: white;
   border-color: black;
+
 }
 
 .text-yellow {

@@ -1,6 +1,4 @@
 <div id="myHeader" class="card">
-  
-
     <div>
       <label class="label">Bid Name</label>
       <p class="card-text bold-text">{{ biddingStatus.bidName }}</p>
@@ -14,38 +12,27 @@
     <div >
       <label class="label">Bid Status </label>
       <p>
-        <span class="text-yellow card-text bold-text">{{
-          biddingStatus.bidStatus
-        }}</span>
+        <span class="text-yellow card-text bold-text">{{biddingStatus.bidStatus}}</span>
       </p>
     </div>
-
- 
-</div>
+  </div>
 
 <div class="card">
-  <div
-    id="top10AvailableBlocks"
-    class="card-header"
-    (click)="top10CurrentShow = !top10CurrentShow"
-  >
+  <div id="top10AvailableBlocks" class="card-header" (click)="top10CurrentShow = !top10CurrentShow">
     <div>
       <p class="card-text bold-text">
         Top 10 Available blocks
 
-        <mat-icon
-          (click)="openModal()"
-          data-bs-toggle="modal"
+        <mat-icon (click)="openModal()" data-bs-toggle="modal"
           data-bs-target="#myModal"
           fontIcon="info"
-          style="color: #2969f2"
-        ></mat-icon>
-        <span class="Top_10_Available_blocks">
-          <mat-icon style="font-size: xx-large">{{
-            top10CurrentShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
-          }}</mat-icon>
+          style="color: #2969f2"></mat-icon>
+
+        <span  style="padding-left: 23%;">
+          <mat-icon style="font-size: xx-large">{{top10CurrentShow ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon>
         </span>
       </p>
+
     </div>
   </div>
   <div class="card-body" [class.hidden]="!top10CurrentShow">
@@ -70,7 +57,7 @@
   >
     <div>
       <p class="card-text bold-text">
-        Top 10 In-demand blocks
+        Top 10 Requested blocks
 
         <mat-icon
           (click)="openModal()"
@@ -79,7 +66,8 @@
           fontIcon="info"
           style="color: #2969f2"
         ></mat-icon>
-        <span class="Top_10_In-demand_blocks">
+        
+        <span style="padding-left: 18%;">
           <mat-icon style="font-size: xx-large">{{
             top10AvailShow ? "keyboard_arrow_up" : "keyboard_arrow_down"
           }}</mat-icon>
@@ -91,7 +79,6 @@
     <div class="round-state">
       <div *ngFor="let block of top10AvailableBlocks; let i = index">
         <label class="bold-text">{{ block.blockno }}</label>
-
         <p class=" bold-text card-text">{{ block.date }}</p>
         <hr />
       </div>
@@ -107,7 +94,7 @@
         <h5 class="modal-title">
           {{
             top10IndemandBlock
-              ? "Top 10 In-Demand Blocks"
+              ? "Top 10 Requested Blocks"
               : "Top 10 Available Blocks"
           }}
         </h5>

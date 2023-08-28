@@ -1,14 +1,14 @@
 
   <div  class="switchbtn">
-    <button style="width: 50%;color:aliceblue" class="btn  btn-block rounded-pill" (click)="showCurrentRound()" [ngClass]="{'btn-primary': currentRoundsVisible}">Current Round</button>
-    <button style="width: 50%;color:aliceblue" class="btn  btn-block rounded-pill" (click)="showCompletedRounds()" [ngClass]="{'btn-primary': completedRoundsVisible}">Completed Rounds</button>
+    <button  class="btn  btn-block rounded-pill  swtichbtntoggle" (click)="showCurrentRound()" [ngClass]="{'btn-primary': currentRoundsVisible}">Current Round</button>
+    <button  class="btn  btn-block rounded-pill swtichbtntoggle" (click)="showCompletedRounds()" [ngClass]="{'btn-primary': completedRoundsVisible}">Completed Rounds</button>
   </div>
   <div>
     <ng-container *ngIf="currentRoundsVisible">
       <div class="card">
-        <div class="card-header">
-          <div>
-            <p class="card-text bold-text">Add a New Bid</p>
+        <div >
+         
+            <h4> <b> Add a New Bid</b></h4>
             <label class="label">Select a Block to Bid</label>
             <mat-form-field>
               <mat-label>Select</mat-label>
@@ -44,21 +44,26 @@
                 </mat-datepicker-actions>
               </mat-date-range-picker>
             </mat-form-field>
-          </div>
+      
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header" (click)="expandRounds = !expandRounds">
-          <div>
-            <p class="card-text bold-text">Current Bids - Round 2</p>
+      <div class="card" >
+        <div   (click)="expandRounds = !expandRounds">
+          <div >
+            <p class="card-text bold-text">Current Bids - Round 2
+            <span style="padding-left: 20%;"><mat-icon style="font-size: xx-large">{{expandRounds  ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
+          </p>
           </div>
         </div>
-        <div class="card-header"  [class.hidden]="!expandRounds">
-          <div *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
-            <img src="../../assets/Joint bid.svg" />
-            <label class="label">{{ preference.preference }}</label>
-            <p style="margin-left:12% ;" class="card-text bold-text">{{ preference.date }}</p>
+        <div   [class.hidden]="!expandRounds">
+          <div  *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
+            <img src="../../assets/Move icon.svg" alt="Move icon">
+            <img style="padding-left: 10px ;"  [src]="preference.preference === 'Preference 2' ? '../../assets/Joint bid.svg' : '../../assets/Bid.svg'" />
+            <label style="padding-left: 10px;" class="label">{{ preference.preference }}</label>
+            <span style="padding-left : 25%;" ><mat-icon style="font-size: xx-large">{{preference.isShow ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
+              <p style="padding-left : 22%;" class="card-text bold-text">{{ preference.date }}</p>
+              <hr/>
             <div class="card-body" [class.hidden]="!preference.isShow" >
                 <label class="innerLabel">Joint Bid With</label>
                 <p class="card-text bold-text">{{preference.jointBidWith}}</p>
@@ -96,15 +101,15 @@
         
         <div *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
         <div class="card-header" (click)="preferenceRoundone = !preferenceRoundone">
-          <img src="../../assets/Joint bid.svg" />
+          <img [src]="preference.preference === 'Preference 3' ?'../../assets/Joint bid.svg':'../../assets/Bid.svg'" style="padding-left:5px" />
           <label class="card-text bold-text">{{preference.preference}}</label>
 
-          <img  src="../../assets/Awarded.svg" alt="" style="margin-left: 48%;">
-            <p  style ="margin-left: 11%;"class="card-text bold-text">{{preference.date}}</p>
-            <div class="card-body" [class.hidden]="!preference.isShow">
-              <label class="innerLabel">My Group Seniority Rank</label>
-              <p class="card-text bold-text">1</p>
-
+          <img  [src]="preference.isAwarded == true ?'../../assets/Awarded.svg':'../../assets/notAwarded.svg' " alt="" style="padding-left: 35%;">
+            <p  style ="margin-left: 13%;"class="card-text bold-text">{{preference.date}}</p>
+            <hr/>
+            <div class="card-body background-image" [class.hidden]="!preference.isShow">
+              <label class="innerLabel">My Group Seniority Rank</label>              
+                <p class="card-text bold-text">1</p>
               <label  class="innerLabel">Awarded Hrs</label>
               <p class="card-text bold-text">40</p>
 
@@ -154,11 +159,7 @@
       </div>
       <div class="modal-footer">
         <button
-          type="button"
-          class="btn btn-primary"
-          (click)="coloseModel()"
-          data-bs-dismiss="modal"
-        >
+          type="button" class="btn btn-primary" (click)="coloseModel()"data-bs-dismiss="modal">
           Close
         </button>
       </div>

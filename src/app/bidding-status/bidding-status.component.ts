@@ -44,7 +44,7 @@ export class BiddingStatusComponent {
     {blockno : "Block 3",date:'Apr-02-2024 - Apr-08-2024'},{blockno : "Block 4",date:'May-02-2024 - May-08-2024'},
     {blockno : "Block 5",date:'Jul/02/2024 - Jul/08/2024'},{blockno : "Block 6",date:'Jul/02/2024 - Jul/08/2024'},
   ]
-
+   
   top10IndemandBlocks = [
     {blockno : "Block 1",date:'01/02/2024 - 01/08/2024'},{blockno : "Block 2",date:'01/02/2024 - 01/08/2024'},
     {blockno : "Block 3",date:'01/02/2024 - 01/08/2024'},{blockno : "Block 4",date:'01/02/2024 - 01/08/2024'},

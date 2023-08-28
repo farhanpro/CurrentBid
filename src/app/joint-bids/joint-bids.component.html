@@ -36,13 +36,15 @@
           >
             <span>
               <label class="card-text bold-text">Bid Blocks </label>
-              <img src="../../assets/Awarded.svg" style="margin-left: 52%" />
+              <img [src]="myRequest.awardStatus == 'Awarded'?'../../assets/Awarded.svg':'../../assets/notAwarded.svg'" style="margin-left: 52%" />
               <p class="card-text bold-text">{{ myRequest.date }}</p>
             </span>
+            <hr/>
 
             <div class="card-body" [class.hidden]="!myRequest.isShow">
               <label class="innerLabel">Round Number</label>
               <p class="card-text bold-text">{{ myRequest.roundNumber }}</p>
+            
 
               <label class="innerLabel"
                 >Partner Master Seniority Rank
@@ -196,8 +198,8 @@
             class="card-header"
             (click)="preferenceRoundone = !preferenceRoundone"
           >
-          <label class="card-text bold-text"> Round {{ i + 1 }} </label>
-          <img src="../../assets/Awarded.svg" style="margin-left: 52%" alt="" />
+          <label class="card-text bold-text"> Round{{ i + 1 }} </label>
+          <img [src]="preference.awardedStatus == 'Awarded' ? '../../assets/Awarded.svg':'../../assets/notAwarded.svg'" style="margin-left: 52%" alt="" />
             <p >
               {{ preference.date }}
             </p>
@@ -265,7 +267,7 @@
             (click)="preferenceRoundone = !preferenceRoundone"
           >
           <label class="card-text bold-text"> Round {{ i + 1 }} </label>
-          <img src="../../assets/Awarded.svg" style="margin-left: 52%" />
+          
             <p  >
               {{ preference.date }}
             </p>

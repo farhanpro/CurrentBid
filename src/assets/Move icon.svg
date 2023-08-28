@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Move_icon" data-name="Move icon" transform="translate(-294 -186.5)">
+    <rect id="Rectangle_855" data-name="Rectangle 855" width="20" height="20" transform="translate(294 186.5)" fill="none"/>
+    <g id="Group_3270" data-name="Group 3270" transform="translate(297.4 192.25)">
+      <circle id="Ellipse_52" data-name="Ellipse 52" cx="1.4" cy="1.4" r="1.4" transform="translate(2.75 11.25) rotate(-90)" fill="#9b9fb1"/>
+      <circle id="Ellipse_53" data-name="Ellipse 53" cx="1.4" cy="1.4" r="1.4" transform="translate(2.75 5.65) rotate(-90)" fill="#9b9fb1"/>
+      <circle id="Ellipse_54" data-name="Ellipse 54" cx="1.4" cy="1.4" r="1.4" transform="translate(2.75 0.05) rotate(-90)" fill="#9b9fb1"/>
+      <circle id="Ellipse_55" data-name="Ellipse 55" cx="1.4" cy="1.4" r="1.4" transform="translate(7.65 11.25) rotate(-90)" fill="#9b9fb1"/>
+      <circle id="Ellipse_56" data-name="Ellipse 56" cx="1.4" cy="1.4" r="1.4" transform="translate(7.65 5.65) rotate(-90)" fill="#9b9fb1"/>
+      <circle id="Ellipse_57" data-name="Ellipse 57" cx="1.4" cy="1.4" r="1.4" transform="translate(7.65 0.05) rotate(-90)" fill="#9b9fb1"/>
+    </g>
+  </g>
+</svg>

@@ -17,6 +17,7 @@ interface roundPreferece{
   jointBidWith:string;
   bidGsr:string;
   availbleBlockCapacity:number;
+  isAwarded : boolean;
 }
 
 @Injectable()
@@ -92,9 +93,9 @@ export class MybidsComponent implements OnInit {
   }
 
   preference : roundPreferece[ ]= [
-    {preference:"Preference 1",date:"01/02/2024-01/08/2024",isShow:false,jointBidWith:"Marlenes Charls",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2},
-    {preference:"Preference 2",date:"07/02/2024-07/08/2024",isShow:false,jointBidWith:"Tauseef Patel",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2},
-    {preference:"Preference 3",date:"02/02/2024-02/08/2024",isShow:false,jointBidWith:"Farhan",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2},
+    {preference:"Preference 1",date:"Jan/02/2024-01/08/2024",isShow:false,jointBidWith:"Marlenes Charls",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2,isAwarded:true},
+    {preference:"Preference 2",date:"July/02/2024-07/08/2024",isShow:false,jointBidWith:"Marlenes Charls",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2,isAwarded:false},
+    {preference:"Preference 3",date:"Feb/02/2024-02/08/2024",isShow:false,jointBidWith:"Marlenes Charls",bidGsr:"1(Pending joint Bid Approval)",availbleBlockCapacity:2,isAwarded:true},
 
   ]
   constructor(public roundService: ServiceService ) {}
@@ -116,12 +117,12 @@ export class MybidsComponent implements OnInit {
   }
 
   showCurrentRound() {
-    this.currentRoundsVisible = !this.currentRoundsVisible
+    this.currentRoundsVisible = true;
     this.completedRoundsVisible = false;
   }
 
   showCompletedRounds() {
-    this.completedRoundsVisible = !this.completedRoundsVisible;
+    this.completedRoundsVisible = true;
     this.currentRoundsVisible = false;
   }
   ngOnInit() {}

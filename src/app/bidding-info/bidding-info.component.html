@@ -49,7 +49,7 @@
         <p>
           <span
             [ngClass]="{
-              'bold-text text-yellow': currentRoundStatus.roundStatus == 'Bidding Open',
+              'text-yellow bold-text ': currentRoundStatus.roundStatus == 'Bidding Open',
               'bold-text text-red': currentRoundStatus.roundStatus === 'Bidding Closed'
             }"
           >

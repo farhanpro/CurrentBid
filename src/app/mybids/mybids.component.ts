@@ -83,7 +83,7 @@ export class MybidsComponent implements OnInit {
   currentRoundsVisible : boolean = true;
   completedRoundsVisible : boolean = false;
   preferenceRoundone : boolean = true;
-
+  
   expandBidPeriodCard: boolean = false;
   expandRounds : boolean = false;
 

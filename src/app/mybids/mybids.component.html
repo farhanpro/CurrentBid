@@ -50,18 +50,18 @@
 
       <div class="card" >
         <div   (click)="expandRounds = !expandRounds">
-          <div >
+          <div class="card-header">
             <p class="card-text bold-text">Current Bids - Round 2
-            <span style="padding-left: 20%;"><mat-icon style="font-size: xx-large">{{expandRounds  ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
+            <span style="padding-left: 30%;"><mat-icon style="font-size: xx-large">{{expandRounds  ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon></span>
           </p>
           </div>
         </div>
-        <div   [class.hidden]="!expandRounds">
+        <div *ngIf="!expandRounds">
           <div  *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
             <img src="../../assets/Move icon.svg" alt="Move icon">
             <img style="padding-left: 10px ;"  [src]="preference.preference === 'Preference 2' ? '../../assets/Joint bid.svg' : '../../assets/Bid.svg'" />
             <label style="padding-left: 10px;" class="label">{{ preference.preference }}</label>
-            <span style="padding-left : 25%;" ><mat-icon style="font-size: xx-large">{{preference.isShow ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
+            <span style="padding-left : 37%;" ><mat-icon style="font-size: xx-large">{{preference.isShow ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
               <p style="padding-left : 22%;" class="card-text bold-text">{{ preference.date }}</p>
               <hr/>
             <div class="card-body" [class.hidden]="!preference.isShow" >
@@ -94,20 +94,27 @@
       <div class="card">
 
         <div class="card-header">
-          <div>
-            <p class="card-text bold-text">Round 1</p>
+          <div >
+            <p class="card-text bold-text" >Round 1 
+              <span style="padding-left:70%" (click)="preferenceRoundone = !preferenceRoundone">
+                <mat-icon style="font-size: xx-large">{{ preferenceRoundone ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}
+                </mat-icon>
+              </span>
+              </p>
+             
           </div>
         </div>
-        
-        <div *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
-        <div class="card-header" (click)="preferenceRoundone = !preferenceRoundone">
-          <img [src]="preference.preference === 'Preference 3' ?'../../assets/Joint bid.svg':'../../assets/Bid.svg'" style="padding-left:5px" />
+        <div *ngIf="preferenceRoundone" > 
+        <div  *ngFor="let preference of preference " (click)="preference.isShow = !preference.isShow">
+        <div  >
+          <img  [src]="preference.preference === 'Preference 3' ?'../../assets/Joint bid.svg':'../../assets/Bid.svg'" style="padding-left:5px" />
           <label class="card-text bold-text">{{preference.preference}}</label>
 
           <img  [src]="preference.isAwarded == true ?'../../assets/Awarded.svg':'../../assets/notAwarded.svg' " alt="" style="padding-left: 35%;">
+          <mat-icon style="font-size: xx-large">{{ preference.isShow ?  "keyboard_arrow_up" :"keyboard_arrow_down"}}</mat-icon>
             <p  style ="margin-left: 13%;"class="card-text bold-text">{{preference.date}}</p>
             <hr/>
-            <div class="card-body background-image" [class.hidden]="!preference.isShow">
+            <div [class]="preference.isAwarded == true ?'card-body background-image2':'card-body background-image'" [class.hidden]="!preference.isShow">
               <label class="innerLabel">My Group Seniority Rank</label>              
                 <p class="card-text bold-text">1</p>
               <label  class="innerLabel">Awarded Hrs</label>
@@ -124,7 +131,7 @@
           </div>
       
         </div>
-
+      </div>
         
         
       </div>

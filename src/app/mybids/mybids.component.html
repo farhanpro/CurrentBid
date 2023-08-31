@@ -5,7 +5,7 @@
   </div>
   <div>
     <ng-container *ngIf="currentRoundsVisible">
-      <div class="card">
+      <div class="myBidsCard">
         <div >
          
             <h4> <b> Add a New Bid</b></h4>
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="card" >
+      <div class="myBidsCard" >
         <div   (click)="expandRounds = !expandRounds">
           <div class="card-header">
             <p class="card-text bold-text">Current Bids - Round 2
@@ -58,12 +58,13 @@
         </div>
         <div *ngIf="!expandRounds">
           <div  *ngFor="let preference of preference" (click)="preference.isShow = !preference.isShow">
+            <hr/>
             <img src="../../assets/Move icon.svg" alt="Move icon">
             <img style="padding-left: 10px ;"  [src]="preference.preference === 'Preference 2' ? '../../assets/Joint bid.svg' : '../../assets/Bid.svg'" />
             <label style="padding-left: 10px;" class="label">{{ preference.preference }}</label>
             <span style="padding-left : 37%;" ><mat-icon style="font-size: xx-large">{{preference.isShow ? "keyboard_arrow_up" : "keyboard_arrow_down"}}</mat-icon></span>
               <p style="padding-left : 22%;" class="card-text bold-text">{{ preference.date }}</p>
-              <hr/>
+              
             <div class="card-body" [class.hidden]="!preference.isShow" >
                 <label class="innerLabel">Joint Bid With</label>
                 <p class="card-text bold-text">{{preference.jointBidWith}}</p>
@@ -91,7 +92,7 @@
     </ng-container>
 
     <ng-container *ngIf="completedRoundsVisible">
-      <div class="card">
+      <div class="myBidsCard">
 
         <div class="card-header">
           <div >
@@ -104,8 +105,9 @@
              
           </div>
         </div>
-        <div *ngIf="preferenceRoundone" > 
+        <div  *ngIf="preferenceRoundone" > 
         <div  *ngFor="let preference of preference " (click)="preference.isShow = !preference.isShow">
+          <hr/>
         <div  >
           <img  [src]="preference.preference === 'Preference 3' ?'../../assets/Joint bid.svg':'../../assets/Bid.svg'" style="padding-left:5px" />
           <label class="card-text bold-text">{{preference.preference}}</label>
@@ -113,7 +115,7 @@
           <img  [src]="preference.isAwarded == true ?'../../assets/Awarded.svg':'../../assets/notAwarded.svg' " alt="" style="padding-left: 35%;">
           <mat-icon style="font-size: xx-large">{{ preference.isShow ?  "keyboard_arrow_up" :"keyboard_arrow_down"}}</mat-icon>
             <p  style ="margin-left: 13%;"class="card-text bold-text">{{preference.date}}</p>
-            <hr/>
+            
             <div [class]="preference.isAwarded == true ?'card-body background-image2':'card-body background-image'" [class.hidden]="!preference.isShow">
               <label class="innerLabel">My Group Seniority Rank</label>              
                 <p class="card-text bold-text">1</p>

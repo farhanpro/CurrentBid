@@ -1,9 +1,10 @@
-.card {
+.myPCard {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid #FFFFFF;
   border-radius: 12px;
   padding: 16px;
+  background-color: #FFFFFF;
   
 }
 h4{

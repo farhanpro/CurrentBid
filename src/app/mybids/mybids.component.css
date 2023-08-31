@@ -21,13 +21,14 @@
   width: 30%; /* Set width to fill the element */
   height: 300px; /* Set height to control the height of the element */
 }
-.card {
+.myBidsCard {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 12px;
   font-family: "Red Hat Text";
   font-size: 13pt;
+  font-weight: 400;
   opacity: 1;
   background : padding-box;
   background-color: #FFFFFF;
@@ -41,9 +42,9 @@
 }
 
 .text-yellow {
-  color: var(--unnamed-color-f59b40);
+ 
   text-align: left;
-  font: normal normal medium 14px/20px Red Hat Text;
+  font-family: "Red Hat Text";
   letter-spacing: 0px;
   color: #F59B40;
   background-color: #FFE8B9;
@@ -52,15 +53,20 @@
 .text-blue{
   
   text-align: left;
-  font: normal normal medium 14px/20px Red Hat Text;
+  font-family: "Red Hat Text";
   letter-spacing: 0px;
   color: #0F2658;
   background-color: #D2D5D7;
   opacity: 1;
 }
 .text-green {
-  color: #181C1E;
+  
+  font-family: "Red Hat Text";
   background-color: #2CBE7C;
+  color: black;
+  font-weight: 400;
+  
+
 }
 
 .flex-container {
@@ -100,8 +106,9 @@
 
 .card-header {
   background-color: white;
-  border-radius: 12px;
   opacity: 1;
+  border-radius: 2px;
+  border-color: black;
 }
 .currentBid_card-header
 {

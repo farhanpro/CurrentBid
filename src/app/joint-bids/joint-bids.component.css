@@ -1,11 +1,4 @@
-.nav-home {
-    text-align: center;
-    font: normal normal medium 16px/21px Red Hat Display;
-    letter-spacing: 0px;
-    color: #06103d;
-    opacity: 1;
-    border-style: outset;
-  }
+
   .card {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -19,9 +12,9 @@
     font-family: "Red Hat Text";
     text-align: left;
     letter-spacing: 0px;
-    color: #F59B40;
-    background-color: #FFE8B9;
-    opacity: 1;
+    background-color:#F59B40;
+    padding: 2px;
+    
   }
   .text-blue{
     text-align: left;
@@ -32,8 +25,11 @@
     opacity: 1;
   }
   .text-green {
-    color: #181C1E;
-    background-color: #2CBE7C;
+    font-family: "Red Hat Text";
+    text-align: left;
+    letter-spacing: 0px;
+    background-color:#2CBE7C;
+    padding: 2px;
   }
   
   .flex-container {
@@ -68,6 +64,7 @@
   .card-header {
     background-color: white;
     border-radius: 12px;
+    border: hidden;
 
   }
   .card-header.hidden {

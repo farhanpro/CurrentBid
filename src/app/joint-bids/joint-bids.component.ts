@@ -44,6 +44,8 @@ interface recivedRequest
 export class JointBidsComponent {
   currentRoundsVisible: boolean = true;
   completedRoundsVisible: boolean = false;
+  completedRoundsVisible2: boolean = false;
+
   preferenceRoundone: boolean = true;
   expandBidPeriodCard: boolean = false;
   expandRounds: boolean = false;

@@ -23,26 +23,27 @@
 
   <div>
     <ng-container *ngIf="currentRoundsVisible">
+
+      <!-- My request round 1 -->
       <div class="card">
         <div class="card-header" (click)="expandRound1 = !expandRound1">
-          <div>
-            <span>
-            <p class="card-text bold-text">Round 1 <mat-icon style="font-size: xx-large">{{ expandRound1 ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
-            </p>
-            </span>
+          <div style="display: flex; justify-content: space-between;">
+            
+            <p class="card-text bold-text">Round 1 </p>
+            <mat-icon style="font-size: xx-large">{{ expandRound1 ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
+            
           </div>
         </div>
         <div class="card-header" [class.hidden]="!expandRound1">
-          <div
-            *ngFor="let myRequest of myRequest"
-            (click)="myRequest.isShow = !myRequest.isShow"
-          >
-            <span>
+          <div *ngFor="let myRequest of myRequest" (click)="myRequest.isShow = !myRequest.isShow">
+            <span style="display: flex; justify-content: space-between;">
               <label class="card-text bold-text">Bid Blocks </label>
-              <img [src]="myRequest.awardStatus == 'Awarded'?'../../assets/Awarded.svg':'../../assets/notAwarded.svg'" style="margin-left: 52%" />
+              <span style="display: flex; justify-content: space-between;">
+              <img [src]="myRequest.awardStatus == 'Awarded'?'../../assets/Awarded.svg':'../../assets/notAwarded.svg'"  />
               <mat-icon style="font-size: xx-large">{{  myRequest.isShow ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
-              <p class="card-text bold-text">{{ myRequest.date }}</p>
             </span>
+            </span>
+            <p class="card-text bold-text">{{ myRequest.date }}</p>
             <hr/>
 
             <div class="card-body" [class.hidden]="!myRequest.isShow">
@@ -103,22 +104,23 @@
           </div>
         </div>
       </div>
+
+      <!-- MY request Round 2 -->
       <div class="card">
         <div class="card-header" (click)="expandRound2 = !expandRound2">
-          <div>
-            <p class="card-text bold-text">Round 2 
-              <mat-icon style="font-size: xx-large">{{ expandRound2 ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
-            </p>
+          <div style="display: flex; justify-content: space-between;">
+            <p class="card-text bold-text">Round 2 </p>
+            <mat-icon style="font-size: xx-large">{{ expandRound2 ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
           </div>
         </div>
         <div class="card-header" [class.hidden]="!expandRound2">
           <div *ngFor="let myRequest of myRequestRound2" (click)="myRequest.isShow = !myRequest.isShow">
             
-            <span>
+            <span style="display: flex; justify-content: space-between;">
               <label class="label">Bid Blocks </label>
               <mat-icon style="font-size: xx-large;">{{ myRequest.isShow ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
-              <p class="card-text bold-text">{{ myRequest.date }}</p>
             </span>
+            <p class="card-text bold-text">{{ myRequest.date }}</p>
 
             <div class="card-body" [class.hidden]="!myRequest.isShow">
               <label class="innerLabel">Round Number</label>
@@ -184,30 +186,36 @@
       </div>
     </ng-container>
 
+     <!-- Recived Request round 1 -->
     <ng-container *ngIf="completedRoundsVisible">
       <div class="card">
-        <div class="card-header">
-          <div>
+        <div (click)="expandBidPeriodCard = !expandBidPeriodCard" class="card-header">
+          <div style="display: flex; justify-content: space-between;">
             <p class="card-text bold-text">Round 1</p>
+            <mat-icon style="font-size: xx-large">{{  expandBidPeriodCard ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
           </div>
+          
         </div>
-
+        <div *ngIf="expandBidPeriodCard">
         <div
           *ngFor="let preference of recivedRequest; let i = index"
           (click)="preference.isShow = !preference.isShow"
         >
-          <div
-            class="card-header"
-            (click)="preferenceRoundone = !preferenceRoundone"
-          >
-          <label class="card-text bold-text"> Round{{ i + 1 }} </label>
-          <img [src]="preference.awardedStatus == 'Awarded' ? '../../assets/Awarded.svg':'../../assets/notAwarded.svg'" style="margin-left: 52%" alt="" />
-          <mat-icon style="font-size: xx-large;">{{ preference.isShow ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon> 
-          <p >
-              {{ preference.date }}
-            </p>
+        <hr/>
+
+          <div class="card-header" (click)="preferenceRoundone = !preferenceRoundone">
+          
+            <div style="display: flex; justify-content: space-between;">
+              <label class="card-text bold-text"> Round{{ i + 1 }} </label>
+              <span>
+              <img [src]="preference.awardedStatus == 'Awarded' ? '../../assets/Awarded.svg':'../../assets/notAwarded.svg'"  alt="" />
+              <mat-icon style="font-size: xx-large;">{{ preference.isShow ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon> 
+                </span>
+            </div>
+          <p class="card-text bold-text">{{ preference.date }}</p>
             
-            <div [class.hidden]="!preference.isShow">
+        
+          <div *ngIf="preference.isShow">
               <label class="label">Round Number</label>
               <p class="card-text bold-text">{{ preference.roundNumber }}</p>
 
@@ -216,8 +224,7 @@
                 {{ preference.jointBidPartner }}
               </p>
 
-              <label class="label"
-                >Partnerv Master Seniority Rank
+              <label class="label">Partner Master Seniority Rank
                 <mat-icon
                   (click)="openModal()"
                   data-bs-toggle="modal"
@@ -231,7 +238,7 @@
               </p>
 
               <label class="label"
-                >Partnerv Group Seniority Rank
+                >Partner Group Seniority Rank
                 <mat-icon
                   (click)="openModal(true)"
                   data-bs-toggle="modal"
@@ -245,22 +252,26 @@
               </p>
 
               <label class="label">Request Status </label>
-              <p class="card-text bold-text">{{ preference.requestStatus }}</p>
+              <p><span class="text-green bold-text card-text">{{ preference.requestStatus }}</span></p>
 
               <label class="label">Award Status </label>
               <p class="card-text bold-text">{{ preference.awardedStatus }}</p>
             </div>
+            
           </div>
         </div>
       </div>
+      </div>
 
+      <!-- Recived Request -->
       <div class="card">
-        <div class="card-header">
-          <div>
-            <p class="card-text bold-text">Round 1</p>
+        <div (click)="completedRoundsVisible2 = !completedRoundsVisible2" class="card-header">
+          <div style="display: flex; justify-content: space-between;">
+            <p class="card-text bold-text">Round 2</p>
+            <mat-icon style="font-size: xx-large">{{  completedRoundsVisible2 ?  "keyboard_arrow_down" :"keyboard_arrow_up"}}</mat-icon>
           </div>
         </div>
-
+        <div *ngIf="completedRoundsVisible2">
         <div
           *ngFor="let preference of myRequestRound2; let i = index"
           (click)="preference.isShow = !preference.isShow"
@@ -274,7 +285,7 @@
             <p  >
               {{ preference.date }}
             </p>
-            <div class="card-body" [class.hidden]="!preference.isShow">
+            <div card="card-body" [class.hidden]="!preference.isShow">
               <label class="label">Round Number</label>
               <p class="card-text bold-text">{{ preference.roundNumber }}</p>
 
@@ -284,7 +295,7 @@
               </p>
 
               <label class="label"
-                >Partnerv Master Seniority Rank
+                >Partner Master Seniority Rank
                 <mat-icon
                   (click)="openModal(false)"
                   data-bs-toggle="modal"
@@ -312,16 +323,16 @@
               </p>
 
               <label class="label">Request Status </label>
-              <p class="card-text bold-text">{{ preference.requestStatus }}</p>
-
+              <p><span class="text-yellow bold-text card-text">{{ preference.requestStatus }}</span></p>
               <!-- <label  class="label">Award Status  </label>
              <p class="card-text bold-text">{{preference.awardedStatus}}</p>-->
 
-              <button type="button" class="btn btn-secondary">Decline</button>
-              <button type="button" class="btn btn-primary">Accept</button>
+              <button type="button" style="margin:5px" class="btn btn-secondary">Decline</button>
+              <button type="button" style="margin:5px" class="btn btn-primary">Accept</button>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </ng-container>
   </div>
